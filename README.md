@@ -191,5 +191,5 @@ http://<public-ip>:8040
 
 ## 🙌 Credits
 
-DevOps Implementation by Hitesh Darshan
-Built using MEAN Stack + Docker + AWS Terraform CI/CD
+DevOps Implementation by Hitesh Darshan<br/>
+Built using MEAN Stack + Docker + AWS Terraform CI/CD<br/>
