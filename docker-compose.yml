@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "3000:3000"
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/tutorials
+    depends_on:
+      - mongodb
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "8040:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:
